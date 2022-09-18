@@ -3,20 +3,24 @@
 comportamentos (observe a tabela), utilize os seus conhecimentos e distribua as
 características de forma que tudo o que for comum a todos os animais fique na classe
 Animal:
+2- Implemente um programa que crie os 3 tipos de animais definidos no exercício
+anterior e invoque o método que emite o som de cada um de forma polimórfica, isto
+é, independente do tipo de animal.
  */
 package ex01Herança;
 
-public class Animal {
+public abstract class Animal {
 	
 	private String nome;
 	private int idade;
-	private String som;
 	
-	public Animal(String nome, int idade, String som)
+	abstract public void som();
+	abstract public void movimento();
+	
+	public Animal(String nome, int idade)
 	{
 		this.nome = nome;
 		this.idade = idade;
-		this.som = som;
 	}
 
 	public String getNome() {
@@ -34,15 +38,5 @@ public class Animal {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-
-	public String getSom() {
-		return som;
-	}
-
-	public void setSom(String som) {
-		this.som = som;
-	}
-	
-	
 
 }
